@@ -1,0 +1,82 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(88, 88, 88, 0.808);
+    background-image: url(images/gameBackgroundPastel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    }
+
+#start-button {    
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#score {
+    margin-left: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-left: 50px;
+    color: rgb(191, 241, 250);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.589);
+    border: solid white 1px;
+}
+
+.grid div {
+    height: 20px;
+    width: 20px;
+}
+
+.tetromino {
+    background-color: rgba(0, 0, 255, 0);
+}
+
+.mini-grid {
+    margin-top: 63px;
+    margin-left: 50px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255, 0.589);
+    border: solid white 1px;
+    
+}
+
+.mini-grid div {
+    height: 20px;
+    width: 20px;
+}
+
+.block {
+    background-image: url(src/images/yellow_block.png);
+    }
+
+.block2 {
+    background-image: url(src/images/green_block.png);
+}
+
+.block3 {
+    background-image: url(src/images/pink_block.png);
+}
+
+.block4 {
+    background-image: url(src/images/blue_block.png);
+}
+
+.block5 {
+    background-image: url(src/images/purple_block.png);
+}
