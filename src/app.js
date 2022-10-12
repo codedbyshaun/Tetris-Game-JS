@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    window.alert('Welcome to Tetris! Here are the rules:')
-
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
     const scoreDisplay = document.querySelector('#score')
     const startBtn = document.querySelector('#start-button')
     const width = 10
-    let nextRandom = 0 
+    let nextRandom = 0
     let timerId
     let score = 0
     const colors = [
@@ -79,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function undraw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.remove('tetromino')
-            squares[currentPosition + index].style.backgroundImage = ''                      
+            squares[currentPosition + index].style.backgroundImage = ''
         })
     }
 
@@ -88,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // timerId = setInterval(moveDown, 1000)
 
     // assign functions to key
-    
+
     function control(e) {
-        if(e.key === 'ArrowLeft') {
+        if (e.key === 'ArrowLeft') {
             moveLeft()
         } else if (e.key === 'ArrowUp') {
             rotate()
@@ -145,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function moveRight() {
         undraw()
-        const isAtRightEdge = current.some(index => (currentPosition + index) % width === width -1)
+        const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1)
 
         if (!isAtRightEdge) currentPosition += 1
 
-        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+        if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
             currentPosition -= 1
         }
 
@@ -167,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkRotatedPosition(P) {
-        P = P || currentPosition 
+        P = P || currentPosition
         if ((P + 1) % width < 4) {
             if (ifAtRight()) {
                 currentPosition += 1
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         else if (P % width > 5) {
-            if (ifAtLeft()){
+            if (ifAtLeft()) {
                 currentPosition -= 1
                 checkRotatedPosition(P)
             }
@@ -186,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function rotate() {
         undraw()
-        currentRotation ++ 
-        if(currentRotation === current.length) { // if current rotation gets to 4, make it go back to 0
+        currentRotation++
+        if (currentRotation === current.length) { // if current rotation gets to 4, make it go back to 0
             currentRotation = 0
         }
         current = theTetrominoes[random][currentRotation]
@@ -198,16 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // show up-next tetromino in mini-grid
     const displaySquares = document.querySelectorAll('.mini-grid div')
     const displayWidth = 4
-    const displayIndex = 0  
-    
+    const displayIndex = 0
+
 
     // the Tetrominoes without rotations
     const upNextTetrominoes = [
-        [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
-        [0, displayWidth, displayWidth+1, displayWidth*2+1], //zTetromino
-        [1, displayWidth, displayWidth+1, displayWidth+2], //tTetromino
-        [0, 1, displayWidth, displayWidth+1], //oTetromino
-        [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] // iTetromino
+        [1, displayWidth + 1, displayWidth * 2 + 1, 2], //lTetromino
+        [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], //zTetromino
+        [1, displayWidth, displayWidth + 1, displayWidth + 2], //tTetromino
+        [0, 1, displayWidth, displayWidth + 1], //oTetromino
+        [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1] // iTetromino
     ]
 
     // display shape in mini-grid display
@@ -219,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         upNextTetrominoes[nextRandom].forEach(index => {
             displaySquares[displayIndex + index].classList.add('tetromino')
-            displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom]                       
+            displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom]
         })
     }
 
@@ -232,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             draw()
             timerId = setInterval(moveDown, 1000)
-            nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+            nextRandom = Math.floor(Math.random() * theTetrominoes.length)
             displayShape()
         }
     })
@@ -240,11 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // add score
 
     function addScore() {
-        for (let i = 0; i < 199; i+=width) {
-            const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
+        for (let i = 0; i < 199; i += width) {
+            const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9]
 
-            if(row.every(index => squares[index].classList.contains('taken'))) {
-                score +=10
+            if (row.every(index => squares[index].classList.contains('taken'))) {
+                score += 10
                 scoreDisplay.innerHTML = score
                 row.forEach(index => {
                     squares[index].classList.remove('taken')
@@ -261,23 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // game over
 
     function gameOver() {
-        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+        if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerId)
         }
     }
-
-
-
-
-
-
-
-
-    // console.log(theTetrominoes[0][0])
-
-
-
-
 
 })
