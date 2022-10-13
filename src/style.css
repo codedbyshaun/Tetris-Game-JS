@@ -4,14 +4,15 @@ body {
     background-image: url(images/gameBackgroundPastel.png);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    }
+}
 
-#start-button {    
+#start-button {
     margin-top: 20px;
     margin-left: 50px;
 }
@@ -53,7 +54,7 @@ h3 {
     flex-wrap: wrap;
     background-color: rgb(255, 255, 255, 0.589);
     border: solid white 1px;
-    
+
 }
 
 .mini-grid div {
@@ -63,7 +64,7 @@ h3 {
 
 .block {
     background-image: url(src/images/yellow_block.png);
-    }
+}
 
 .block2 {
     background-image: url(src/images/green_block.png);
@@ -79,4 +80,74 @@ h3 {
 
 .block5 {
     background-image: url(src/images/purple_block.png);
+}
+
+#start-button {
+    position: relative;
+    text-decoration: none;
+    width: 80px;
+    height: 18px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;    
+    line-height: 19px;
+    font-size: 11px;
+    display: block;
+    margin-left: 52px;
+    text-shadow: -1px -1px 0 #af42da;
+    background: #d250b2;
+    border: 1px solid #c846f0;    
+    background-image: linear-gradient(to bottom, #f66cef, #d250cc);
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad42ad,
+        0 4px 2px rgba(187, 128, 214, 0.5);
+}
+
+#start-button:before {
+    background: #f0f0f0;
+    background-image: linear-gradient(#d0d0d0, #f0f0f0);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+    position: absolute;
+    content: "";
+    left: -4px;
+    right: -4px;
+    top: -4px;
+    bottom: -9px;
+    z-index: -1;
+  }
+  
+  #start-button:active {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+      0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    top: 7px;
+  }
+  
+  #start-button:active:before {
+    top: -11px;
+    bottom: -2px;
+    content: "";
+  }
+
+#rules {
+    position: relative;
+    text-decoration: none;
+    width: 95px;
+    height: 22px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;    
+    line-height: 23px;
+    font-size: 10px;
+    display: block;
+    margin-left: 44px;
+    text-shadow: -1px -1px 0 #af42da;
+    background: #d250b2;
+    border: 1px solid #c846f0;    
+    background-image: linear-gradient(to bottom, #f66cef, #d250cc);
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad42ad,
+        0 4px 2px rgba(187, 128, 214, 0.5);
 }
