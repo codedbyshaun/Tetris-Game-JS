@@ -1,12 +1,12 @@
-body {    
-    background-color: rgba(88, 88, 88, 0.808);
+body {
+    background-image: linear-gradient(to bottom, #f66cef, #d250cc);  
     background-image: url(images/gameBackgroundPastel.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;    
     font-family: 'Orbitron', sans-serif;
 }
 
-.container {
+.container {    
     display: flex;
     justify-content: center;
 }
@@ -132,6 +132,7 @@ h3 {
 #rules {
     position: relative;
     text-decoration: none;
+    margin-top: 30px;
     width: 95px;
     height: 22px;
     text-align: center;
@@ -150,3 +151,74 @@ h3 {
         0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad42ad,
         0 4px 2px rgba(187, 128, 214, 0.5);
 }
+
+#rules:before {
+    background: #f0f0f0;
+    background-image: linear-gradient(#d0d0d0, #f0f0f0);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+    position: absolute;
+    content: "";
+    left: -4px;
+    right: -4px;
+    top: -4px;
+    bottom: -9px;
+    z-index: -1;
+  }
+  
+  #rules:active {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+      0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    top: 7px;
+  }
+  
+  #rules:active:before {
+    top: -11px;
+    bottom: -2px;
+    content: "";
+  }
+
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(40, 24, 51, 0.897);
+  }
+
+  .menu-content {
+    text-align: center;
+    width: 600px;
+    align-items: center;
+    margin-top: 230px;
+    justify-content: center;
+    width: 200vw;
+    height: 200vh;
+    border-radius: 50%;
+    transition: all 0.8s ease;
+  }
+
+  .rules {
+    font-size: 18px;
+    color:rgb(191, 241, 250);
+    transition: color 0.4s ease;
+  }
+
+  .t-ucase {
+    color:rgb(191, 241, 250);
+  }
+
+  .key {
+    color: #f8de7e;
+  }
+
+  .close {
+    border-radius: 5px;
+    color: rgba(24, 39, 51, 0.85);
+  }
