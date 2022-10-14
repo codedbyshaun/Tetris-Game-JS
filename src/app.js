@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
+    const hamburgerBtn = document.querySelector('.toggler')
+    const menu = document.querySelector('.menu')
+    const span = document.getElementsByClassName('close')[0]
     const scoreDisplay = document.querySelector('#score')
     const startBtn = document.querySelector('#start-button')
     const width = 10
@@ -264,5 +267,12 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId)
         }
     }
+    
+    hamburgerBtn.addEventListener('click', () => {
+        menu.style.display = 'flex'
+      })
+      span.addEventListener('click', () => {
+        menu.style.display = 'none'
+      })
 
 })
