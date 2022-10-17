@@ -22,22 +22,23 @@ body {
 
 h3 {
     margin-top: 20px;
-    margin-left: 50px;
+    margin-left: 120px;
     color: rgb(191, 241, 250);
+    font-size: 23px;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
-    height: 400px;
+    width: 400px;
+    height: 800px;
     background-color: rgba(255, 255, 255, 0.589);
     border: solid white 1px;
 }
 
 .grid div {
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
 }
 
 .tetromino {
@@ -45,10 +46,10 @@ h3 {
 }
 
 .mini-grid {
-    margin-top: 63px;
+    margin-top: 72px;
     margin-left: 50px;
-    height: 80px;
-    width: 80px;
+    height: 160px;
+    width: 160px;
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(255, 255, 255, 0.589);
@@ -57,42 +58,22 @@ h3 {
 }
 
 .mini-grid div {
-    height: 20px;
-    width: 20px;
-}
-
-.block {
-    background-image: url(src/images/yellow_block.png);
-}
-
-.block2 {
-    background-image: url(src/images/green_block.png);
-}
-
-.block3 {
-    background-image: url(src/images/pink_block.png);
-}
-
-.block4 {
-    background-image: url(src/images/blue_block.png);
-}
-
-.block5 {
-    background-image: url(src/images/purple_block.png);
+    height: 40px;
+    width: 40px;
 }
 
 #start-button {
     position: relative;
     text-decoration: none;
-    width: 80px;
-    height: 18px;
+    width: 138px;
+    height: 25px;
     text-align: center;
     color: #fff;
     letter-spacing: 1px;    
     line-height: 19px;
-    font-size: 11px;
+    font-size: 14px;
     display: block;
-    margin-left: 52px;
+    margin-left: 60px;
     text-shadow: -1px -1px 0 #af42da;
     background: #d250b2;
     border: 1px solid #c846f0;    
@@ -133,15 +114,15 @@ h3 {
     position: relative;
     text-decoration: none;
     margin-top: 30px;
-    width: 95px;
-    height: 22px;
+    width: 138px;
+    height: 25px;
     text-align: center;
     color: #fff;
     letter-spacing: 1px;    
     line-height: 23px;
-    font-size: 10px;
+    font-size: 13px;
     display: block;
-    margin-left: 44px;
+    margin-left: 60px;
     text-shadow: -1px -1px 0 #af42da;
     background: #d250b2;
     border: 1px solid #c846f0;    
