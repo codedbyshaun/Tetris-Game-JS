@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [1, width + 1, width * 2 + 1, width * 2],
         [width, width * 2, width * 2 + 1, width * 2 + 2]
     ]
-
+       
     const zTetromino = [
         [0, width, width + 1, width * 2 + 1],
         [width + 1, width + 2, width * 2, width * 2 + 1],
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [0, 1, width, width + 1],
         [0, 1, width, width + 1]
     ]
-
+    
     const iTetromino = [
         [1, width + 1, width * 2 + 1, width * 3 + 1],
         [width, width + 1, width + 2, width + 3],
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         current.forEach(index => {
             squares[currentPosition + index].classList.add('tetromino')
             squares[currentPosition + index].style.backgroundImage = colors[random]
+            squares[currentPosition + index].style.backgroundSize = 'cover'
         })
     }
 
@@ -221,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         upNextTetrominoes[nextRandom].forEach(index => {
             displaySquares[displayIndex + index].classList.add('tetromino')
             displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom]
+            displaySquares[displayIndex + index].style.backgroundSize = 'cover'
         })
     }
 
@@ -267,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId)
         }
     }
-    
+
     hamburgerBtn.addEventListener('click', () => {
         menu.style.display = 'flex'
       })
