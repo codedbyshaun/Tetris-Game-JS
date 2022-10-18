@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="src/app.js"></script>
   <link rel="stylesheet" href="src/style.css">
-  <title>Tetris Revamped</title>
+  <title>Tetris!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@100;200;300;400;600;700;800&display=swap"
@@ -21,16 +21,32 @@
         <h2 class="t-ucase">rules</h2>
         <p class="rules"> Press the <b class="key">UP</b> key to rotate your tetromino, and <b class="key">LEFT</b>
           and <b class="key">RIGHT</b> to <br> move across the board. Pressing <b class="key">DOWN</b> will speed up the
-          tetromino.</p>
+          tetromino. Fill up a row with no spaces to score points. <br> The game ends when the board is filled up with tetrominos, and the goal is to get as high a score as possible.</p>
         <button class="close fw-400">X</button>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="context"></div>  
+
+<div class="area">
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+
+   <div class="container">
     <div class="main-grid-container">
       <h3>Score:<span id="score">0</span></h3>
-      <div class="grid">
+      <div class="grid"> 
         <div></div>
         <div></div>
         <div></div>
@@ -240,7 +256,7 @@
         <div class="taken"></div>
         <div class="taken"></div>
         <div class="taken"></div>
-        <div class="taken"></div>
+        <div class="taken"></div> 
       </div>
     </div>
 
@@ -262,15 +278,14 @@
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
+        <div></div>            
       </div>
 
       <button id="start-button">Start/Pause</button>
-
       <button class="toggler" id="rules">How it works</button>
-
+      
     </div>
-
   </div>
+</div>
 </body>
 </html>
