@@ -3,8 +3,9 @@
   padding: 0px;
 }
 
-body {  
-  background-image: url(images/gameBackgroundPastel.png); /* fallback background*/
+body {
+  background-image: url(images/gameBackgroundPastel.png);
+  /* fallback background*/
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Orbitron', sans-serif;
@@ -13,11 +14,6 @@ body {
 .container {
   display: flex;
   justify-content: center;
-}
-
-#start-button {
-  margin-top: 20px;
-  margin-left: 50px;
 }
 
 #score {
@@ -62,7 +58,6 @@ h3 {
   text-align: center;
   background-color: rgb(255, 255, 255, 0.589);
   border: solid white 1px;
-
 }
 
 .mini-grid div {
@@ -70,8 +65,9 @@ h3 {
   width: 40px;
 }
 
-#start-button {
+.btn {
   position: relative;
+  margin-top: 29px;
   text-decoration: none;
   width: 138px;
   height: 25px;
@@ -92,7 +88,7 @@ h3 {
     0 4px 2px rgba(187, 128, 214, 0.5);
 }
 
-#start-button:before {
+.btn:before {
   background: #f0f0f0;
   background-image: linear-gradient(#d0d0d0, #f0f0f0);
   border-radius: 5px;
@@ -106,61 +102,13 @@ h3 {
   z-index: -1;
 }
 
-#start-button:active {
+.btn:active {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
     0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   top: 7px;
 }
 
-#start-button:active:before {
-  top: -11px;
-  bottom: -2px;
-  content: "";
-}
-
-#rules {
-  position: relative;
-  text-decoration: none;
-  margin-top: 27px;
-  width: 138px;
-  height: 25px;
-  text-align: center;
-  color: #fff;
-  letter-spacing: 1px;
-  line-height: 23px;
-  font-size: 13px;
-  display: block;
-  margin-left: 60px;
-  text-shadow: -1px -1px 0 #af42da;
-  border: 1px solid #c846f0;
-  background-image: linear-gradient(to bottom, #f66cef, #d250cc);
-  border-radius: 5px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad42ad,
-    0 4px 2px rgba(187, 128, 214, 0.5);
-}
-
-#rules:before {
-  background: #f0f0f0;
-  background-image: linear-gradient(#d0d0d0, #f0f0f0);
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
-  position: absolute;
-  content: "";
-  left: -4px;
-  right: -4px;
-  top: -4px;
-  bottom: -9px;
-  z-index: -1;
-}
-
-#rules:active {
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-  top: 7px;
-}
-
-#rules:active:before {
+.btn:active:before {
   top: -11px;
   bottom: -2px;
   content: "";
@@ -203,14 +151,20 @@ h3 {
 
 .key {
   color: #f8de7e;
+  font-weight: bold;
 }
 
 .close {
-  border-radius: 5px;
-  color: rgba(24, 39, 51, 0.85);
+  margin-top: 20px;
+  width: 45px;
+  height: 25px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  color: rgba(9, 65, 111, 0.9);
 }
 
-.footer {  
+.footer {
   position: absolute;
   justify-content: center;
   font-size: 17px;
@@ -230,6 +184,105 @@ h3 {
   color: rgb(243, 0, 231);
 }
 
+/* arrow functions for mobile */
+
+.arrow-container {
+  margin-top: 74px;
+  margin-left: 50px;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.arrowbtn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: rgb(191, 241, 250);
+  border: 2px solid hotpink;
+  border-radius: 25%;
+  color: hotpink;
+  cursor: pointer;
+  line-height: 100px;
+  margin-left: -(100px / 2);
+  transition: all 0.25s ease-in-out;
+}
+
+.arrowbtn:active {
+  background: white;
+  border-color: white;
+  color: rgb(243, 0, 231);
+}
+
+.arrowbtn:after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  top: 37%;
+  left: 37%;
+}
+
+/* up */
+.arrowbtn-up {
+  bottom: 0px;
+  left: 22px;
+}
+
+.arrowbtn-up:after {
+  margin-left: -(25px * .5);
+  margin-top: -(25px * .25);
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotateZ(45deg);
+}
+
+/* down*/
+
+.arrowbtn-down {
+  top: 12px;
+  right: 5px;
+}
+
+.arrowbtn-down:after {
+  margin-left: -(25px * .5);
+  margin-top: -(25px * .75);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotateZ(45deg);
+}
+
+/* right */
+
+.arrowbtn-right {
+  top: 25px;
+  left: 18px;
+}
+
+.arrowbtn-right:after {
+  margin-left: -(25px * .5);
+  margin-top: -(25px * .25);
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotateZ(130deg);
+}
+
+/* left */
+
+.arrowbtn-left {
+  bottom: 13px;
+  right: 0px;
+}
+
+.arrowbtn-left:after {
+  margin-left: -(25px * .5);
+  margin-top: -(25px * .25);
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotateZ(-50deg);
+}
 
 /* start background styling */
 
@@ -362,16 +415,34 @@ h3 {
 
 /* make responsive */
 
+@media only screen and (min-width: 970px) {
+  .arrow-container {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
+
+  .menu {
+    height: auto;
+  }
+
+  .menu-content {
+    margin-top: 80px;
+  }
 
   #score {
     margin-left: 8px;
   }
-  
+
   h3 {
     margin-top: 20px;
-    margin-left: 70px;    
+    margin-left: 70px;
     font-size: 18px;
+  }
+
+  .container {
+    position: absolute;
   }
 
   .grid {
@@ -384,6 +455,16 @@ h3 {
     width: 20px;
   }
 
+  .main-grid-container {
+    position: absolute;
+    left: 14px;
+  }
+
+  .mini-grid-container {
+    position: absolute;
+    left: 180px;
+  }
+
   .mini-grid {
     height: 80px;
     width: 80px;
@@ -394,7 +475,7 @@ h3 {
     width: 20px;
   }
 
-  #start-button {
+  .btn {
     width: 62px;
     height: 13px;
     letter-spacing: 1px;
@@ -402,14 +483,10 @@ h3 {
     font-size: 8px;
   }
 
-  #rules {
-    width: 62px;
-    height: 13px;
-    letter-spacing: 1px;
-    line-height: 9px;
-    font-size: 8px;
+  .rules {
+    font-size: 16px;
   }
-  
+
   .footer {
     font-size: 11px;
     margin-top: 20px;
