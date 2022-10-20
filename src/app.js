@@ -3,10 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
     const hamburgerBtn = document.querySelector('.toggler')
+    const gameOverMsg = document.querySelector('.game-over-msg')
+    const arrowPadLeft = document.querySelector('.arrowbtn-left')
+    const arrowPadRight = document.querySelector('.arrowbtn-right')
+    const arrowPadUp = document.querySelector('.arrowbtn-up')
+    const arrowPadDown = document.querySelector('.arrowbtn-down')
     const menu = document.querySelector('.menu')
     const span = document.getElementsByClassName('close')[0]
     const scoreDisplay = document.querySelector('#score')
     const startBtn = document.querySelector('#start-button')
+    const newGameBtn = document.querySelector('#new-game')
     const width = 10
     let nextRandom = 0
     let timerId
@@ -19,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'url(src/images/purple_block.png)'
     ]
 
+    // start create game grid
+
+    // end create game grid
+
+
     // The Tetrominoes
 
     const lTetromino = [
@@ -27,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [1, width + 1, width * 2 + 1, width * 2],
         [width, width * 2, width * 2 + 1, width * 2 + 2]
     ]
-       
+
     const zTetromino = [
         [0, width, width + 1, width * 2 + 1],
         [width + 1, width + 2, width * 2, width * 2 + 1],
@@ -48,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [0, 1, width, width + 1],
         [0, 1, width, width + 1]
     ]
-    
+
     const iTetromino = [
         [1, width + 1, width * 2 + 1, width * 3 + 1],
         [width, width + 1, width + 2, width + 3],
@@ -103,6 +114,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     document.addEventListener('keyup', control)
+
+    // assign move functions to arrow pad click on mobile
+
+    arrowPadLeft.addEventListener('click', () => {
+        moveLeft()
+    })
+
+    arrowPadRight.addEventListener('click', () => {
+        moveRight()
+    })
+
+    arrowPadUp.addEventListener('click', () => {
+        rotate()
+    })
+
+    arrowPadDown.addEventListener('click', () => {
+        moveDown()
+    })
 
     function moveDown() {
         undraw()
@@ -200,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // show up-next tetromino in mini-grid
     const displaySquares = document.querySelectorAll('.mini-grid div')
     const displayWidth = 4
-    const displayIndex = 0
+    const displayIndex = 5
 
 
     // the Tetrominoes without rotations
@@ -263,18 +292,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // game over
 
+    function stopDraw() {
+        draw = function () { }
+    }
+
+    function stopDisplay() {
+        displayShape = function () { }
+    }
+
+    function stopUndraw() {
+        undraw = function () { }
+    }
+
     function gameOver() {
         if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-            scoreDisplay.innerHTML = 'end'
+            scoreDisplay.innerHTML = score + ' [GAME OVER]'
             clearInterval(timerId)
+            stopDraw()
+            stopDisplay()
+            stopUndraw()            
         }
     }
 
+    // new game    
+
+    newGameBtn.addEventListener('click', () => {
+        window.location.reload()       
+    })
+
+    // rules menu display
+
     hamburgerBtn.addEventListener('click', () => {
         menu.style.display = 'flex'
-      })
-      span.addEventListener('click', () => {
+    })
+    span.addEventListener('click', () => {
         menu.style.display = 'none'
-      })
+    })
 
 })
