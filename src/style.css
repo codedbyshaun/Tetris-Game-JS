@@ -289,10 +289,10 @@ h3 {
 }
 
 .area {
-  background: #4ec8be;
+  background: #4e6ec8;
   background: -webkit-linear-gradient(to left, #b58ffb, #c32cff);
   width: 100%;
-  height: 100vh;
+  height: 120vh;
 }
 
 .circles {
