@@ -1,2 +1,2 @@
 # Tetris-Game-JS
-A tetris game built in JavaScript
+A fun, interactive tetris game built in vanilla JavaScript, HTML, and CSS
